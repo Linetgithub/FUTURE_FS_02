@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section id="header">
+    <h1>Bobba FunShop!</h1>
+  </header>
+
+  <div>
+    <ul id="navbar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+  </div>
+</section>
+
+  <main>
+    <section id="product-list">
+      <div class="product">
+        <image src="images/bobba.jpg" alt="Magic Mug">
+        <h2>bobba tea</h2>
+        <p class="description">A taiwanese drink also known as bubble tea</p>
+        <p class="price">$4</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product">
+        <image src="images/mangoicedtea.jpg">
+        <h2>mango iced tea</h2>
+        <p class="description">A tropical refreshing flavour customised with tapioca pearls & boba toppings!</p>
+        <p class="price">$5</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product">
+        <image src="images/Taro.jpg">
+        <h2>Taro milk tea</h2>
+        <p class="description">A mixture of taro powder and green tea, texture like sweet potato</p>
+        <p class="price">$3</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div> 
+     
+     <div class="product">
+        <image src="images/mixed.jpg">
+        <h2>Mixed fruit juice</h2>
+        <p class="description">A flavorful drink from freshly squeezed fruits</p>
+        <p class="price">$4</p>
+        <button class="add-to-cart">Add to Cart</button>
+     </div>
+
+    <div class="product">
+        <image src="images/condensed.jpg">
+        <h2>condensed milk</h2>
+        <p class="description">A high fat content creamy drink</p>
+        <p class="price">$4</p>
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <image src="images/pudding.jpg">
+        <h2>pudding & cheese toppings</h2>
+        <p class="description"> made to add flavor to your drink</p>
+        <p class="price">$1</p>
+        <button class="add-to-cart">Add to cart</button>
+    </div>
+
+
+    </section>
+  
+    <section id="cart">
+      <h2>Your Cart</h2>
+      <div id="cart-items"></div>
+      <p>Total: $<span id="total-price">0</span></p>
+      <label for="payment-method">Select Payment Method:</label>
+    <select id="payment-method">
+      <option value="credit-card">Credit Card</option>
+      <option value="paypal">PayPal</option>
+      <option value="M-pesa">Mpesa</option>
+      <option value="cash-on-delivery">Cash on Delivery</option>
+    </select>
+      <button id="checkout">Checkout</button>
+      <button id="confirm-order">confirm order</button>
+  </div>
+
+</div>
+   
+  <div class="delivery-form-section">
+    <h2>Delivery Details</h2>
+    <form id="delivery-form">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+  
+      <label for="address">Delivery Address:</label>
+      <input type="text" id="address" name="address" placeholder="Enter your delivery address" required>
+  
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location" placeholder="Enter your city or area" required>
+  
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+  
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+  
+      <button type="button" id="submit-delivery">Submit Delivery Details</button>
+    </form>
+  </section>
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
