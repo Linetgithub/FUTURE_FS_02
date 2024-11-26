@@ -114,7 +114,7 @@ h1 {
     cursor: pointer;
     font-size: 24px;
     position: relative;
-    margin-right: auto;
+    margin-left: 90%;
 }
 
 #cart-icon:hover {
@@ -137,7 +137,7 @@ h1 {
 #cart-modal {
     position: fixed;
     top: 50%;
-    left: 50%;
+    left: 80%;
     transform: translate(-50%, -50%);
     background-color: rgb(142, 145, 143);
     border: 1px solid #ccc;
