@@ -219,7 +219,7 @@ button#close-cart:hover {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: auto;
+    width: 30%;
 }
 
 #submit-delivery {
@@ -230,6 +230,7 @@ button#close-cart:hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    width: 32%;
 }
 
 #submit-delivery:hover {
@@ -256,4 +257,21 @@ html {
     main {
         flex-direction: column;
     }
+}
+
+#search-bar {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#search-button {
+    background-color: #0b61d1;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#search-button:hover {
+    background-color: #0056b3;
 }
