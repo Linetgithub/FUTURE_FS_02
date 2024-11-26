@@ -7,68 +7,50 @@ body {
 
 header {
     display: flex;
-    align-items: right;
-    text-align: center;
+    align-items: center;
     background-color: #ff6f61;
-    color: rgb(19, 17, 17);
-    padding: 20px 80px;
+    color: #fff;
+    padding: 20px 40px;
     justify-content: space-between;
-}
-
-#navbar li {
-    list-style: none;
-    padding: 0 20px;
-    position: relative;
 }
 
 #navbar {
     display: flex;
-    align-items: right;
-    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
 }
 
-#hero {
-    height: 90vh;
-    width: 100%;
-    background-position: top 25% right 0;
-    padding: 0 80px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
+#navbar li {
+    list-style: none;
+    position: relative;
 }
 
 #navbar li a {
     text-decoration: none;
     font-size: 16px;
-    font-weight: 600;
-    color: #ff6f61;
+    font-weight: bold;
+    color: #fff;
     transition: 0.3s ease;
 }
 
 #navbar li a:hover,
 #navbar li a.active {
-    color: #28a745
-}
-
-#navbar li a.active::after {
-    content: "";
-    width: 30%;
-    height: 2px;
-    background: rgba(7, 129, 62, 0.467);
-    bottom: -px;
-    left: 20px;
+    color: #28a745;
 }
 
 main {
     display: flex;
-    justify-content: space-between;
     flex-direction: row;
     gap: 20px;
     margin: 20px;
 }
 
 #product-list {
-    width: 50%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
 .product {
@@ -77,6 +59,7 @@ main {
     padding: 10px;
     border-radius: 5px;
     background-color: #faf6f6;
+    text-align: center;
 }
 
 .product h2 {
@@ -89,15 +72,21 @@ main {
 
 .price {
     font-weight: bold;
+    color: #ff6f61;
 }
 
 button {
-    padding: 10px;
+    padding: 10px 20px;
     background-color: #ff6f61;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff5a4a;
 }
 
 .product img {
@@ -114,37 +103,66 @@ button {
     transition: transform 0.3s ease;
 }
 
-button:hover {
-    background-color: #ff5a4a;
+h1 {
+    margin-right: left;
+    font-size: 24px;
+    font-weight: bold;
 }
 
-#cart {
-    width: 30%;
-    border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #5a5a58;
+#cart-icon {
+    color: #0a0a0a;
+    cursor: pointer;
+    font-size: 24px;
+    position: relative;
+    margin-right: auto;
+}
+
+#cart-icon:hover {
+    transform: scale(1.2);
+}
+
+#cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    padding: 4px 6px;
+    font-weight: bold;
     display: inline-block;
-    background-position-x: ;
-    box-sizing: 75px;
+}
+
+#cart-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(142, 145, 143);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    z-index: 1000;
+}
+
+body.modal-active::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(38, 239, 15, 0.947);
+    z-index: 999;
 }
 
 #cart-items {
+    max-height: 200px;
+    overflow-y: auto;
     margin-bottom: 10px;
-}
-
-#confirm-order {
-    padding: 10px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left: 10px;
-}
-
-#confirm-order:hover {
-    background-color: #218838;
 }
 
 #payment-method {
@@ -158,6 +176,25 @@ button:hover {
 #payment-method:focus {
     border-color: #ff6f61;
     outline: none;
+}
+
+button#checkout,
+button#confirm-order,
+button#close-cart {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #04893e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button#checkout:hover,
+button#confirm-order:hover,
+button#close-cart:hover {
+    background-color: hsl(251, 88%, 50%);
 }
 
 #delivery-form-section {
@@ -197,4 +234,26 @@ button:hover {
 
 #submit-delivery:hover {
     background-color: #0056b3;
+}
+
+.hidden {
+    display: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    #navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+    main {
+        flex-direction: column;
+    }
 }

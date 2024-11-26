@@ -5,91 +5,103 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ECart</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
   <section id="header">
-    <h1>Bobba FunShop!</h1>
-  </header>
-
-  <div>
-    <ul id="navbar">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="shop.html">shop</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">contact</a></li>
-    </ul>
-  </div>
-</section>
+    <h1>Bobba Shop</h1>
+    <div id="cart-icon" class="fas fa-shopping-cart" style="font-size: 24px; cursor: pointer; position: relative;">
+        <span id="cart-count" style="position: absolute; top: -8px; right: -8px; background: red; color: white; font-size: 12px; font-weight: bold; border-radius: 50%; padding: 2px 6px; display: none;">0</span>
+    </div>
+  </section>
 
   <main>
-    <section id="product-list">
+    <div id="product-list">
       <div class="product">
-        <image src="images/bobba.jpg" alt="Magic Mug">
-        <h2>bobba tea</h2>
-        <p class="description">A taiwanese drink also known as bubble tea</p>
+        <img src="images/bobba.jpg" alt="Bobba Tea">
+        <h2>Bobba Tea</h2>
+        <p class="description">A Taiwanese drink also known as bubble tea</p>
         <p class="price">$4</p>
         <button class="add-to-cart">Add to Cart</button>
       </div>
       <div class="product">
-        <image src="images/mangoicedtea.jpg">
-        <h2>mango iced tea</h2>
-        <p class="description">A tropical refreshing flavour customised with tapioca pearls & boba toppings!</p>
+        <img src="images/mangoicedtea.jpg" alt="Mango Iced Tea">
+        <h2>Mango Iced Tea</h2>
+        <p class="description">A tropical refreshing flavor with tapioca pearls & boba toppings!</p>
         <p class="price">$5</p>
         <button class="add-to-cart">Add to Cart</button>
       </div>
       <div class="product">
-        <image src="images/Taro.jpg">
-        <h2>Taro milk tea</h2>
+        <img src="images/Taro.jpg" alt="Taro Milk Tea">
+        <h2>Taro Milk Tea</h2>
         <p class="description">A mixture of taro powder and green tea, texture like sweet potato</p>
         <p class="price">$3</p>
         <button class="add-to-cart">Add to Cart</button>
-      </div> 
-     
-     <div class="product">
-        <image src="images/mixed.jpg">
-        <h2>Mixed fruit juice</h2>
+      </div>
+      <div class="product">
+        <img src="images/mixed.jpg" alt="Mixed Fruit Juice">
+        <h2>Mixed Fruit Juice</h2>
         <p class="description">A flavorful drink from freshly squeezed fruits</p>
         <p class="price">$4</p>
         <button class="add-to-cart">Add to Cart</button>
-     </div>
-
-    <div class="product">
-        <image src="images/condensed.jpg">
-        <h2>condensed milk</h2>
+      </div>
+      <div class="product">
+        <img src="images/condensed.jpg" alt="Condensed Milk">
+        <h2>Condensed Milk</h2>
         <p class="description">A high fat content creamy drink</p>
         <p class="price">$4</p>
         <button class="add-to-cart">Add to Cart</button>
-    </div>
-
-    <div class="product">
-        <image src="images/pudding.jpg">
-        <h2>pudding & cheese toppings</h2>
-        <p class="description"> made to add flavor to your drink</p>
+      </div>
+      <div class="product">
+        <img src="images/pudding.jpg" alt="Pudding & Cheese Toppings">
+        <h2>Pudding & Cheese Toppings</h2>
+        <p class="description">Made to add flavor to your drink</p>
         <p class="price">$1</p>
-        <button class="add-to-cart">Add to cart</button>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="images/burgers.jpg" alt="Burgers">
+        <h2>Burgers</h2>
+        <p class="description">A meaty bite</p>
+        <p class="price">$2</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="images/spring.jpg" alt="Spring Rolls">
+        <h2>Spring Rolls</h2>
+        <p class="description">Vegetable and meat bites</p>
+        <p class="price">$1</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="images/desert.jpg" alt="Desserts">
+        <h2>Desserts</h2>
+        <p class="description">Something to boost your appetite</p>
+        <p class="price">$1</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
     </div>
+  </main>
 
-
-    </section>
-  
-    <section id="cart">
-      <h2>Your Cart</h2>
-      <div id="cart-items"></div>
-      <p>Total: $<span id="total-price">0</span></p>
-      <label for="payment-method">Select Payment Method:</label>
+  <div id="cart-modal" class="hidden">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <p>Total: $<span id="total-price">0</span></p>
+    <label for="payment-method">Select Payment Method:</label>
     <select id="payment-method">
       <option value="credit-card">Credit Card</option>
       <option value="paypal">PayPal</option>
-      <option value="M-pesa">Mpesa</option>
+      <option value="M-pesa">M-Pesa</option>
       <option value="cash-on-delivery">Cash on Delivery</option>
     </select>
-      <button id="checkout">Checkout</button>
-      <button id="confirm-order">confirm order</button>
+    <button class="remove-item">Remove</button> 
+    <button id="checkout">Checkout</button>
+    <button id="confirm-order">Confirm Order</button>
+    <button id="close-cart">Close</button>
+    
   </div>
 
-</div>
-   
-  <div class="delivery-form-section">
+  <section class="delivery-form-section">
     <h2>Delivery Details</h2>
     <form id="delivery-form">
       <label for="name">Full Name:</label>
@@ -98,20 +110,14 @@
       <label for="address">Delivery Address:</label>
       <input type="text" id="address" name="address" placeholder="Enter your delivery address" required>
   
-      <label for="location">Location:</label>
-      <input type="text" id="location" name="location" placeholder="Enter your city or area" required>
-  
       <label for="phone">Phone Number:</label>
       <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
-  
-      <label for="email">Email Address:</label>
-      <input type="email" id="email" name="email" placeholder="Enter your email" required>
   
       <button type="button" id="submit-delivery">Submit Delivery Details</button>
     </form>
   </section>
-  
 
   <script src="script.js"></script>
 </body>
 </html>
+
